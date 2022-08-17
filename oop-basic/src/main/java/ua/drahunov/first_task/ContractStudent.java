@@ -17,7 +17,10 @@ public class ContractStudent extends Student{
     }
 
     @Override
-    public void printStudentInformation() {
-        System.out.printf("Name: %s, age: %d, contract value: %.2f\n", getName(), getAge(), contractValue);
+    public String toString() {
+        return "ContractStudent{" +
+                "name: " + getName() +
+                "   contractValue=" + contractValue +
+                '}';
     }
 }

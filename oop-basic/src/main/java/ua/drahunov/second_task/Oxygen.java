@@ -1,20 +1,15 @@
 package ua.drahunov.second_task;
 
-public class Oxygen implements Substance{
-    private double temperature = 20;
+public class Oxygen extends AbstractSubstance implements Substance{
 
     @Override
     public State heatUp(double temperature) {
-        this.temperature = temperature;
+        setTemperature(temperature);
 
         if (temperature > -183) {
             return State.GAS;
         }
 
         return temperature < -219 ? State.SOLID : State.LIQUID;
-    }
-
-    public double getTemperature() {
-        return temperature;
     }
 }

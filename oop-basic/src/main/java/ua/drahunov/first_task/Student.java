@@ -25,7 +25,11 @@ public class Student {
         this.age = age;
     }
 
-    public void printStudentInformation() {
-        System.out.printf("Name: %s, age: %d\n", name, age);
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

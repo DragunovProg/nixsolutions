@@ -1,6 +1,7 @@
 package ua.drahunov.first_task;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Group {
     private Student[] students;
@@ -11,5 +12,11 @@ public class Group {
 
     public Student[] getStudents() {
         return students;
+    }
+
+    public List<Student> getContractStudents() {
+        return Arrays.stream(students)
+                .filter(student -> student instanceof ContractStudent)
+                .toList();
     }
 }

@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         Group group = new Group(createStudents());
 
-        for (Student student : group.getStudents()) {
-            student.printStudentInformation();
+        for (Student student : group.getContractStudents()) {
+            System.out.println(student);
         }
 
         heatingSubstances(new Substance[] {new Water(), new Iron(), new Oxygen()});
