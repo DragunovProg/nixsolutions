@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="882eb37c-9b90-4890-a2be-e2203635253f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/first_task/ContractStudent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/first_task/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/first_task/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/second_task/Iron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/second_task/Oxygen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/second_task/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/second_task/Substance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-basic/src/main/java/ua/drahunov/second_task/Water.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DLCr5h9WwfGgFaLpQYVUzx1hRE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-17",
+    "last_opened_file_path": "D:/IdeaProjects/nixsolutions",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ua.drahunov.second_task" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.drahunov.Main" />
+      <module name="oop-basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.drahunov.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="882eb37c-9b90-4890-a2be-e2203635253f" name="Changes" comment="" />
+      <created>1660469175496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660469175496</updated>
+      <workItem from="1660469178837" duration="11909000" />
+      <workItem from="1660581648961" duration="72000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
