@@ -1,4 +1,4 @@
-package ua.drahunov.first_task;
+package ua.drahunov.firsttask;
 
 public class Student {
     private String name;

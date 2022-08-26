@@ -1,4 +1,4 @@
-package ua.drahunov.second_task;
+package ua.drahunov.secondtask;
 
 public enum State {
     LIQUID,
