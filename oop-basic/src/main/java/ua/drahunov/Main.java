@@ -1,9 +1,9 @@
 package ua.drahunov;
 
-import ua.drahunov.first_task.ContractStudent;
-import ua.drahunov.first_task.Group;
-import ua.drahunov.first_task.Student;
-import ua.drahunov.second_task.*;
+import ua.drahunov.firsttask.ContractStudent;
+import ua.drahunov.firsttask.Group;
+import ua.drahunov.firsttask.Student;
+import ua.drahunov.secondtask.*;
 
 import java.util.Scanner;
 

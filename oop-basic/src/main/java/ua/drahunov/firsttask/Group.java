@@ -1,4 +1,4 @@
-package ua.drahunov.first_task;
+package ua.drahunov.firsttask;
 
 import java.util.Arrays;
 import java.util.List;

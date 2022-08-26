@@ -1,4 +1,4 @@
-package ua.drahunov.second_task;
+package ua.drahunov.secondtask;
 
 public interface Substance {
     public State heatUp(double temperature);
