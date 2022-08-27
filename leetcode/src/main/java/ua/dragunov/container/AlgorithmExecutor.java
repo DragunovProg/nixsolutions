@@ -8,22 +8,21 @@ public class AlgorithmExecutor {
     public static int findContainerWithMostWater(int[] container) {
         int firstCounter = 0;
         int secondCounter = container.length - 1;
-        List<Integer> results = new ArrayList<>();
+        int maxContainerWithWater = 0;
 
         while (firstCounter != secondCounter) {
+            int currentArea = Math.min(container[firstCounter],
+                    container[secondCounter]) * (secondCounter - firstCounter);
+            maxContainerWithWater = Math.max(maxContainerWithWater, currentArea);
+
             if (container[firstCounter] < container[secondCounter]) {
-                results.add(container[firstCounter] * (secondCounter - firstCounter));
                 firstCounter++;
             } else {
-                results.add(container[secondCounter] * (secondCounter - firstCounter));
                 secondCounter--;
             }
         }
 
-        return results.stream()
-                .mapToInt(value -> value)
-                .max()
-                .orElseThrow();
+        return maxContainerWithWater;
     }
 
     public static void main(String[] args) {
