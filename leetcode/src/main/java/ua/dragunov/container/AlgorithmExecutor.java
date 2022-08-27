@@ -1,8 +1,5 @@
 package ua.dragunov.container;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AlgorithmExecutor {
 
     public static int findContainerWithMostWater(int[] container) {
