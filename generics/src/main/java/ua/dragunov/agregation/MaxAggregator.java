@@ -6,7 +6,7 @@ public class MaxAggregator<T extends Comparable<T>> implements Aggregator<T, T>{
     @Override
     public T aggregate(T[] items) {
         return Arrays.stream(items)
-                .max((current, next) -> current.compareTo(next))
+                .max(Comparable::compareTo)
                 .get();
     }
 
