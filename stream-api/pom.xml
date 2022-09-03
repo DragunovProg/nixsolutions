@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>linkedlist-implementation</artifactId>
+    <artifactId>stream-api</artifactId>
     <packaging>jar</packaging>
 
-    <name>linkedlist-implementation</name>
+    <name>stream-api</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
