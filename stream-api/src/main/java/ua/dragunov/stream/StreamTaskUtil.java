@@ -31,7 +31,7 @@ public class StreamTaskUtil {
                 .entrySet()
                     .stream()
                     .max(Map.Entry.comparingByValue())
-                    .get()
+                    .orElseThrow()
                 .getKey();
     }
 }
