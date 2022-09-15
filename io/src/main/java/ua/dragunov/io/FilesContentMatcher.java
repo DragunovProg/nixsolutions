@@ -1,34 +1,55 @@
 package ua.dragunov.io;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class FilesContentMatcher {
-    private File[] getFiles(String path) {
-        File file = new File(path);
+    public List<File> getFiles(String path) throws IOException {
+        List<File> files = new ArrayList<>();
+        Files.walkFileTree(Path.of(path).normalize() , new SimpleFileVisitor<Path>() {
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                if (file.toFile().isFile()) {
+                    files.add(file.toFile());
+                }
 
-        if (file.isDirectory()) {
-            return file.listFiles();
-        }
+                return FileVisitResult.CONTINUE;
+            }
+        });
 
-        return new File[] {file};
+        return files;
     }
 
 
-    public String findLinesInFilesByRegExp(String path, String regExp) {
-        return Arrays.stream(getFiles(path))
-                .flatMap(file -> {
-                    try {
-                        return new BufferedReader(new FileReader(file)).lines();
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                })
-                .filter(s -> Pattern.compile(regExp).matcher(s).find())
-                .map(s -> Pattern.compile(regExp).matcher(s).replaceAll("[$0]"))
-                .reduce("", (current, converted) -> String.valueOf(new StringBuilder(current)
-                        .append(converted)
-                        .append("\n")));
+    public String findLinesInFilesByRegExp(String path, String regExp) throws IOException {
+        Pattern compile = Pattern.compile(regExp);
+        StringBuilder pathBuilder = new StringBuilder();
+
+        getFiles(path).forEach(file -> {
+            try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                pathBuilder.append(reader.lines()
+                        .filter(s -> compile.matcher(s).find())
+                        .map(s -> Pattern.compile(regExp).matcher(s).replaceAll("[$0]"))
+                        .reduce("", (current, converted) -> String.valueOf((new StringBuilder(current)
+                                .append(converted)
+                                .append("\n")))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        return pathBuilder.toString();
     }
+
 }
