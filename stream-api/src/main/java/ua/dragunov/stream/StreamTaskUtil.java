@@ -21,6 +21,7 @@ public class StreamTaskUtil {
     public static Map<LocalDate, List<LocalTime>> findAllLocalTimeForLocalDate(List<LocalDateTime> localDateTimeList) {
         return localDateTimeList.stream()
                 .collect(Collectors.groupingBy(LocalDateTime::toLocalDate
+                        , TreeMap::new
                         , Collectors.mapping(LocalDateTime::toLocalTime, Collectors.toList())));
     }
 
