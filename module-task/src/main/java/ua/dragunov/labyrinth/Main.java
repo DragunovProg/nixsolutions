@@ -6,7 +6,6 @@ import ua.dragunov.labyrinth.io.LabyrinthConsoleWriter;
 import ua.dragunov.labyrinth.io.LabyrinthFileReader;
 import ua.dragunov.labyrinth.io.LabyrinthReader;
 import ua.dragunov.labyrinth.io.LabyrinthWriter;
-import ua.dragunov.labyrinth.logic.LabyrinthPathSearcher;
 
 import java.util.*;
 
