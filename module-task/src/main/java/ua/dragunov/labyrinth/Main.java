@@ -19,9 +19,7 @@ public class Main {
         LabyrinthWriter writer = new LabyrinthConsoleWriter();
         LabyrinthController controller = new LabyrinthController(reader, writer, input);
 
-        controller.setLabyrinthPoints();
-        controller.writeResults();
-
+        controller.getShortestHall();
     }
 
 }

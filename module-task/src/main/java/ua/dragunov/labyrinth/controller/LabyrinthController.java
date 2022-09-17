@@ -2,6 +2,7 @@ package ua.dragunov.labyrinth.controller;
 
 import ua.dragunov.labyrinth.io.LabyrinthReader;
 import ua.dragunov.labyrinth.io.LabyrinthWriter;
+import ua.dragunov.labyrinth.logic.LabyrinthPathSearcher;
 import ua.dragunov.labyrinth.model.Point;
 
 import java.util.Scanner;
@@ -16,14 +17,15 @@ public class LabyrinthController {
         this.input = input;
     }
 
-    public char[][] setLabyrinthPoints() {
+
+
+    public void getShortestHall() {
         char[][] labyrinth = reader.read();
 
         if (isEmpty(labyrinth)) {
-            System.out.println("Content is empty or null");
+            System.out.println("Labyrinth content is empty or null");
             System.exit(1);
         }
-
         System.out.println("Ok, enter start point and end point in (x,y) coordinate in format x y with space between them");
 
         System.out.println("Start point: ");
@@ -37,12 +39,10 @@ public class LabyrinthController {
             System.exit(1);
         }
 
-        return labyrinth;
+
+         writer.write(LabyrinthPathSearcher.getShortestPath(labyrinth, start, end));
     }
 
-    public void writeResults() {
-        writer.write(setLabyrinthPoints());
-    }
 
     public boolean isHall(char[][] labyrinth, Point start, Point end) {
         return labyrinth[start.getXPoint()][start.getYPoint()] == '+'
