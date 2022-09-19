@@ -12,6 +12,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class FilesContentMatcher {
     public List<File> getFiles(String path) throws IOException {
@@ -40,8 +41,7 @@ public class FilesContentMatcher {
                 pathBuilder.append(reader.lines()
                         .filter(s -> compile.matcher(s).find())
                         .map(s -> compile.matcher(s).replaceAll("[$0]"))
-                        .reduce("", (current, converted) ->
-                                String.format("%s%s\n", current, converted)));
+                        .collect(Collectors.joining("\n","", "\n")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
