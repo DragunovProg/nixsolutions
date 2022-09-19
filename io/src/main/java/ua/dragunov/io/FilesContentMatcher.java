@@ -39,10 +39,9 @@ public class FilesContentMatcher {
             try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 pathBuilder.append(reader.lines()
                         .filter(s -> compile.matcher(s).find())
-                        .map(s -> Pattern.compile(regExp).matcher(s).replaceAll("[$0]"))
-                        .reduce("", (current, converted) -> String.valueOf((new StringBuilder(current)
-                                .append(converted)
-                                .append("\n")))));
+                        .map(s -> compile.matcher(s).replaceAll("[$0]"))
+                        .reduce("", (current, converted) ->
+                                String.format("%s%s\n", current, converted)));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
