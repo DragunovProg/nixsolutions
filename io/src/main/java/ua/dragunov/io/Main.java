@@ -9,6 +9,6 @@ public class Main {
         Scanner input = new Scanner(System.in);
         FilesContentMatcher filesContentMatcher = new FilesContentMatcher();
 
-        System.out.println(filesContentMatcher.findLinesInFilesByRegExp(input.next(), input.next()));
+        System.out.println(filesContentMatcher.filterLinesInFilesByRegExp(input.next(), input.next()));
     }
 }

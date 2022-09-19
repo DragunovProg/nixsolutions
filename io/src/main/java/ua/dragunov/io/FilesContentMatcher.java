@@ -32,7 +32,7 @@ public class FilesContentMatcher {
     }
 
 
-    public String findLinesInFilesByRegExp(String path, String regExp) throws IOException {
+    public String filterLinesInFilesByRegExp(String path, String regExp) throws IOException {
         Pattern compile = Pattern.compile(regExp);
         StringBuilder pathBuilder = new StringBuilder();
 
