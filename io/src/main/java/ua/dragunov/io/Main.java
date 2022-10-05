@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
         FilesContentMatcher filesContentMatcher = new FilesContentMatcher();
-
         System.out.println(filesContentMatcher.filterLinesInFilesByRegExp(input.next(), input.next()));
     }
 }
