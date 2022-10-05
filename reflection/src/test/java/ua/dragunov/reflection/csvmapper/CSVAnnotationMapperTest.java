@@ -79,14 +79,20 @@ public class CSVAnnotationMapperTest {
         assertEquals("ihor", user.getLogin());
         assertEquals("drah1999", user.getPassword());
         assertEquals("ihor.drahunov@gmail.com", user.getEmail());
+        assertEquals(21, user.getAge());
+        assertEquals(User.Gender.MALE, user.getGender());
 
         assertEquals("legion1022", user1.getLogin());
         assertEquals("11133drr", user1.getPassword());
         assertEquals("legion20122@gmail.com", user1.getEmail());
+        assertEquals(17, user1.getAge());
+        assertEquals(User.Gender.FEMALE, user1.getGender());
 
         assertEquals("denis.tishenko", user2.getLogin());
         assertEquals("tich322311", user2.getPassword());
         assertEquals("den.tishenko.cc@gmail.com", user2.getEmail());
+        assertEquals(31, user2.getAge());
+        assertEquals(User.Gender.MALE, user2.getGender());
 
     }
 }
