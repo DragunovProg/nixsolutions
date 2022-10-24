@@ -3,6 +3,7 @@ package ua.dragunov.threads;
 public class NumberProcessor {
     private volatile Integer number = 0;
     private int checkingCount = 0;
+    private boolean isWrite = false;
 
 
     public synchronized void generate(Thread thread) throws InterruptedException {
@@ -14,6 +15,8 @@ public class NumberProcessor {
     }
 
     public Integer getNumber() {
+        int number = this.number;
+        this.number = null;
         return number;
     }
 
@@ -27,5 +30,13 @@ public class NumberProcessor {
 
     public synchronized void increment() {
         checkingCount++;
+    }
+
+    public boolean isWrite() {
+        return isWrite;
+    }
+
+    public void setWrite(boolean write) {
+        isWrite = write;
     }
 }
