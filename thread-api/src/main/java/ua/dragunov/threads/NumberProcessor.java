@@ -6,11 +6,11 @@ public class NumberProcessor {
     private boolean isWrite = false;
 
 
-    public synchronized void generate(Thread thread) throws InterruptedException {
+    public void generate(Thread thread) throws InterruptedException {
         thread.start();
     }
 
-    public synchronized void checking(Thread thread) throws InterruptedException {
+    public void checking(Thread thread) throws InterruptedException {
             thread.start();
     }
 
