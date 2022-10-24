@@ -13,7 +13,7 @@ public class NumberProcessor {
             thread.start();
     }
 
-    public synchronized Integer getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
