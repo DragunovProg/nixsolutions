@@ -5,15 +5,15 @@ public class NumberProcessor {
     private int checkingCount = 0;
 
 
-    public synchronized void generate(NumberGenerationThread numberGenerationThread) {
-        numberGenerationThread.run();
+    public synchronized void generate(Thread thread) throws InterruptedException {
+        thread.start();
     }
 
-    public synchronized void checking(NumberPrimeCheckingThread numberPrimeCheckingThread) {
-            numberPrimeCheckingThread.run();
+    public synchronized void checking(Thread thread) throws InterruptedException {
+            thread.start();
     }
 
-    public Integer getNumber() {
+    public synchronized Integer getNumber() {
         return number;
     }
 

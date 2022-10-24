@@ -11,7 +11,7 @@ public class NumberGenerationThread implements Runnable{
 
     @Override
     public void run() {
-        numberProcessor.setNumber(ThreadLocalRandom.current().nextInt(2000));
+        while (numberProcessor.getCheckingCount() < 10) numberProcessor.setNumber(ThreadLocalRandom.current().nextInt(2000));
     }
 
 

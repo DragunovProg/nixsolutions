@@ -10,9 +10,11 @@ public class Main {
         NumberGenerationThread numberGenerationThread = new NumberGenerationThread(numberProcessor);
         NumberPrimeCheckingThread numberPrimeCheckingThread = new NumberPrimeCheckingThread(numberProcessor);
 
-        while (numberProcessor.getCheckingCount() < 10) {
-            numberProcessor.generate(numberGenerationThread);
-            numberProcessor.checking(numberPrimeCheckingThread);
-        }
+        Thread generationThread = new Thread(numberGenerationThread);
+        Thread checkingThread = new Thread(numberPrimeCheckingThread);
+
+        numberProcessor.generate(generationThread);
+        numberProcessor.checking(checkingThread);
+
     }
 }
