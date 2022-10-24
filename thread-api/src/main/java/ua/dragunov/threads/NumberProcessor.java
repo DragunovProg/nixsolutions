@@ -15,8 +15,6 @@ public class NumberProcessor {
     }
 
     public Integer getNumber() {
-        int number = this.number;
-        this.number = null;
         return number;
     }
 
