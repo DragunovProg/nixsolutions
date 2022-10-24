@@ -21,7 +21,7 @@ public class NumberProcessor {
         this.number = number;
     }
 
-    public int getCheckingCount() {
+    public synchronized int getCheckingCount() {
         return checkingCount;
     }
 
