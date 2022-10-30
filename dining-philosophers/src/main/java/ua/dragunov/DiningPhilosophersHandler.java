@@ -1,6 +1,7 @@
 package ua.dragunov;
 
 
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -8,40 +9,39 @@ import java.util.concurrent.locks.ReentrantLock;
  * Util class executing a concurrency algorithm to feeding all philosophers  around the table
  * */
 public class DiningPhilosophersHandler {
-    private Lock leftForkLock = new ReentrantLock();
-    private Lock rightForkLock = new ReentrantLock();
+    private Lock forks[] = new Lock[5];
+    private Semaphore semaphore = new Semaphore(4);
+
+    public DiningPhilosophersHandler() {
+        for (int i = 0; i < 5; i++)
+            forks[i] = new ReentrantLock();
+    }
+
 
     public void dining(int philosopher,
-                       Runnable pickLeftFork,
-                       Runnable pickRightFork,
-                       Runnable eat,
-                       Runnable putLeftFork,
-                       Runnable putRightFork) throws InterruptedException {
+                           Runnable pickLeftFork,
+                           Runnable pickRightFork,
+                           Runnable eat,
+                           Runnable putLeftFork,
+                           Runnable putRightFork) throws InterruptedException
+    {
+        int leftFork = philosopher;
+        int rightFork = (philosopher + 4) % 5;
 
+        forks[leftFork].lock();
+        forks[rightFork].lock();
+        pickLeftFork.run();
+        pickRightFork.run();
 
-        while(true) {
-            if(leftForkLock.tryLock()) {
-                try {
-                    pickLeftFork.run();
+        semaphore.acquire();
 
-                    if (rightForkLock.tryLock()) {
-                        try {
-                            pickRightFork.run();
-                            eat.run();
-                            putRightFork.run();
+        eat.run();
 
-                            return;
-                        } finally {
-                            rightForkLock.unlock();
-                        }
-                    }
+        putRightFork.run();
+        putLeftFork.run();
+        forks[rightFork].unlock();
+        forks[leftFork].unlock();
 
-
-                } finally {
-                    putLeftFork.run();
-                    leftForkLock.unlock();
-                }
-            }
-        }
+        semaphore.release();
     }
 }
