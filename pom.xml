@@ -18,6 +18,7 @@
       <module>module-task</module>
       <module>reflection</module>
       <module>thread-api</module>
+      <module>dining-philosophers</module>
   </modules>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
