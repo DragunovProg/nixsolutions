@@ -1,14 +1,9 @@
 package ua.dragunov;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class Main {
 
     public static void main(String[] args) {
         DiningPhilosophersHandler diningPhilosophers = new DiningPhilosophersHandler();
-        int n = 2;
-
         Runnable pickUpLeftFork = () -> {
             System.out.println("picked up left fork by " + Thread.currentThread().getName());
         };
@@ -29,25 +24,72 @@ public class Main {
             System.out.println("put down right fork by " + Thread.currentThread().getName());
         };
 
+        /*
+         *  number of attempts to eat
+         */
+        int n = 1;
 
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        Thread f0 = new Thread(() -> {
+            try {
 
-        for (int i = 0; i < 5; i++) {
-            int philosopher = i;
-            executorService.execute(() -> {
-                try {
-                    diningPhilosophers.dining(philosopher,
-                            pickUpLeftFork,
-                            pickUpRightFork,
-                            eat,
-                            putDownLeftFork,
-                            putDownRightFork);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                for (int i = 0 ; i < n; i++) {
+                    diningPhilosophers.dining(0, pickUpLeftFork, pickUpRightFork, eat, putDownLeftFork, putDownRightFork);
                 }
-            });
-        }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "filo-0");
 
-        executorService.shutdown();
+        Thread f1 = new Thread(() -> {
+            try {
+
+                for (int i = 0 ; i < n; i++) {
+                    diningPhilosophers.dining(1, pickUpLeftFork, pickUpRightFork, eat, putDownLeftFork, putDownRightFork);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "filo-1");
+
+        Thread f2 = new Thread(() -> {
+            try {
+
+                for (int i = 0 ; i < n; i++) {
+                    diningPhilosophers.dining(2, pickUpLeftFork, pickUpRightFork, eat, putDownLeftFork, putDownRightFork);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "filo-2");
+
+        Thread f3 = new Thread(() -> {
+            try {
+
+                for (int i = 0 ; i < n; i++) {
+                    diningPhilosophers.dining(3, pickUpLeftFork, pickUpRightFork, eat, putDownLeftFork, putDownRightFork);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "filo-3");
+
+        Thread f4 = new Thread(() -> {
+            try {
+
+                for (int i = 0 ; i < n; i++) {
+                    diningPhilosophers.dining(0, pickUpLeftFork, pickUpRightFork, eat, putDownLeftFork, putDownRightFork);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }, "filo-4");
+
+
+
+        f0.start();
+        f1.start();
+        f2.start();
+        f3.start();
+        f4.start();
     }
 }
